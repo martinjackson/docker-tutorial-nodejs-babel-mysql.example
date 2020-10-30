@@ -9,3 +9,133 @@ See https://docs.docker.com/docker-for-windows/wsl/ for details.
 
 mjackson@NCL0196460:/mnt/c/Apps/home/tutorials/docker/our-application/app
 $
+
+
+-------------------------------------------------------------------------------
+
+
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+PS C:\Apps\home\tutorials\docker\our-application\app> docker build -t getting-started .
+[+] Building 0.1s (2/2) FINISHED
+ => [internal] load build definition from Dockerfile                                                                 0.0s
+ => => transferring dockerfile: 183B                                                                                 0.0s
+ => [internal] load .dockerignore                                                                                    0.1s
+ => => transferring context: 2B                                                                                      0.0s
+failed to solve with frontend dockerfile.v0: failed to create LLB definition: Dockerfile parse error line 1: FROM requires either one or three arguments
+PS C:\Apps\home\tutorials\docker\our-application\app> docker build -t getting-started .
+[+] Building 52.1s (8/8) FINISHED
+ => [internal] load .dockerignore                                                                                    0.1s
+ => => transferring context: 2B                                                                                      0.0s
+ => [internal] load build definition from Dockerfile                                                                 0.0s
+ => => transferring dockerfile: 228B                                                                                 0.0s
+ => [internal] load metadata for docker.io/library/node:lts-alpine                                                   2.3s
+ => [1/4] FROM docker.io/library/node:lts-alpine@sha256:5a940b79d5655cc688cfb319bd4d0f18565bc732ae19fab6106daaa72a  23.7s
+ => => resolve docker.io/library/node:lts-alpine@sha256:5a940b79d5655cc688cfb319bd4d0f18565bc732ae19fab6106daaa72ae  0.0s
+ => => sha256:5a940b79d5655cc688cfb319bd4d0f18565bc732ae19fab6106daaa72aeb7a63 1.43kB / 1.43kB                       0.0s
+ => => sha256:dc9641311155f990b713df6ab2751c9dc487bd64dd66fb3a25dce673fd4167cc 1.16kB / 1.16kB                       0.0s
+ => => sha256:9db54a688554c7eaf533a5e454862847b4e170140c5dfe719cb8e7390f26cd6d 6.77kB / 6.77kB                       0.0s
+ => => sha256:4c504479294dc7679a037432f8f49a47632d34692569d37a61f3b4aaeee43a45 36.00MB / 36.00MB                    22.0s
+ => => sha256:1e557b93d55799b4ee8dce07339cf00daf4c492a30074b5c426c95c3d424f736 2.24MB / 2.24MB                       3.1s
+ => => sha256:2272910171184a420798e78130a8e28cfc53083ef628d1a119d524c0a528e9a7 283B / 283B                           0.7s
+ => => extracting sha256:4c504479294dc7679a037432f8f49a47632d34692569d37a61f3b4aaeee43a45                            1.1s
+ => => extracting sha256:1e557b93d55799b4ee8dce07339cf00daf4c492a30074b5c426c95c3d424f736                            0.1s
+ => => extracting sha256:2272910171184a420798e78130a8e28cfc53083ef628d1a119d524c0a528e9a7                            0.0s
+ => [internal] load build context                                                                                    0.2s
+ => => transferring context: 6.65MB                                                                                  0.1s
+ => [2/4] WORKDIR /app                                                                                               1.0s
+ => [3/4] COPY . .                                                                                                   0.1s
+ => ERROR [4/4] RUN yarn install --production                                                                       24.7s
+------
+ > [4/4] RUN yarn install --production:
+#8 0.302 yarn install v1.22.5
+#8 0.399 [1/4] Resolving packages...
+#8 0.687 [2/4] Fetching packages...
+#8 22.02 info fsevents@1.2.9: The platform "linux" is incompatible with this module.
+#8 22.02 info "fsevents@1.2.9" is an optional dependency and failed compatibility check. Excluding it from installation.
+#8 22.03 [3/4] Linking dependencies...
+#8 22.89 [4/4] Building fresh packages...
+#8 23.96 info Visit https://yarnpkg.com/en/docs/cli/install for documentation about this command.
+#8 23.96 error /app/node_modules/sqlite3: Command failed.
+#8 23.96 Exit code: 1
+#8 23.96 Command: node-pre-gyp install --fallback-to-build
+#8 23.96 Arguments:
+#8 23.96 Directory: /app/node_modules/sqlite3
+#8 23.96 Output:
+#8 23.96 node-pre-gyp info it worked if it ends with ok
+#8 23.96 node-pre-gyp info using node-pre-gyp@0.11.0
+#8 23.96 node-pre-gyp info using node@14.15.0 | linux | x64
+#8 23.96 node-pre-gyp WARN Using request for node-pre-gyp https download
+#8 23.96 node-pre-gyp info check checked for "/app/node_modules/sqlite3/lib/binding/node-v83-linux-x64/node_sqlite3.node"
+(not found)
+#8 23.96 node-pre-gyp http GET https://mapbox-node-binary.s3.amazonaws.com/sqlite3/v4.1.0/node-v83-linux-x64.tar.gz
+#8 23.96 node-pre-gyp http 403 https://mapbox-node-binary.s3.amazonaws.com/sqlite3/v4.1.0/node-v83-linux-x64.tar.gz
+#8 23.96 node-pre-gyp WARN Tried to download(403): https://mapbox-node-binary.s3.amazonaws.com/sqlite3/v4.1.0/node-v83-linux-x64.tar.gz
+#8 23.96 node-pre-gyp WARN Pre-built binaries not found for sqlite3@4.1.0 and node@14.15.0 (node-v83 ABI, musl) (falling back to source compile with node-gyp)
+#8 23.96 node-pre-gyp http 403 status code downloading tarball https://mapbox-node-binary.s3.amazonaws.com/sqlite3/v4.1.0/node-v83-linux-x64.tar.gz
+#8 23.96 gyp info it worked if it ends with ok
+#8 23.96 gyp info using node-gyp@5.1.0
+#8 23.96 gyp info using node@14.15.0 | linux | x64
+#8 23.96 gyp info ok
+#8 23.96 gyp info it worked if it ends with ok
+#8 23.96 gyp info using node-gyp@5.1.0
+#8 23.96 gyp info using node@14.15.0 | linux | x64
+#8 23.96 gyp ERR! find Python
+#8 23.96 gyp ERR! find Python Python is not set from command line or npm configuration
+#8 23.96 gyp ERR! find Python Python is not set from environment variable PYTHON
+#8 23.96 gyp ERR! find Python checking if "python" can be used
+#8 23.96 gyp ERR! find Python - "python" is not in PATH or produced an error
+#8 23.96 gyp ERR! find Python checking if "python2" can be used
+#8 23.96 gyp ERR! find Python - "python2" is not in PATH or produced an error
+#8 23.96 gyp ERR! find Python checking if "python3" can be used
+#8 23.96 gyp ERR! find Python - "python3" is not in PATH or produced an error
+#8 23.96 gyp ERR! find Python
+#8 23.96 gyp ERR! find Python **********************************************************
+#8 23.96 gyp ERR! find Python You need to install the latest version of Python.
+#8 23.96 gyp ERR! find Python Node-gyp should be able to find and use Python. If not,
+#8 23.96 gyp ERR! find Python you can try one of the following options:
+#8 23.96 gyp ERR! find Python - Use the switch --python="/path/to/pythonexecutable"
+#8 23.96 gyp ERR! find Python   (accepted by both node-gyp and npm)
+#8 23.96 gyp ERR! find Python - Set the environment variable PYTHON
+#8 23.96 gyp ERR! find Python - Set the npm configuration variable python:
+#8 23.96 gyp ERR! find Python   npm config set python "/path/to/pythonexecutable"
+#8 23.96 gyp ERR! find Python For more information consult the documentation at:
+#8 23.96 gyp ERR! find Python https://github.com/nodejs/node-gyp#installation
+#8 23.96 gyp ERR! find Python **********************************************************
+#8 23.96 gyp ERR! find Python
+#8 23.96 gyp ERR! configure error
+#8 23.96 gyp ERR! stack Error: Could not find any Python installation to use
+#8 23.96 gyp ERR! stack     at PythonFinder.fail (/usr/local/lib/node_modules/npm/node_modules/node-gyp/lib/find-python.js:307:47)
+#8 23.96 gyp ERR! stack     at PythonFinder.runChecks (/usr/local/lib/node_modules/npm/node_modules/node-gyp/lib/find-python.js:136:21)
+#8 23.96 gyp ERR! stack     at PythonFinder.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/node-gyp/lib/find-python.js:179:16)
+#8 23.96 gyp ERR! stack     at PythonFinder.execFileCallback (/usr/local/lib/node_modules/npm/node_modules/node-gyp/lib/find-python.js:271:16)
+#8 23.96 gyp ERR! stack     at exithandler (child_process.js:315:5)
+#8 23.96 gyp ERR! stack     at ChildProcess.errorhandler (child_process.js:327:5)
+#8 23.96 gyp ERR! stack     at ChildProcess.emit (events.js:315:20)
+#8 23.96 gyp ERR! stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:275:12)
+#8 23.96 gyp ERR! stack     at onErrorNT (internal/child_process.js:465:16)
+#8 23.96 gyp ERR! stack     at processTicksAndRejections (internal/process/task_queues.js:80:21)
+#8 23.96 gyp ERR! System Linux 4.19.76-linuxkit
+#8 23.96 gyp ERR! command "/usr/local/bin/node" "/usr/local/lib/node_modules/npm/node_modules/node-gyp/bin/node-gyp.js" "configure" "--fallback-to-build" "--module=/app/node_modules/sqlite3/lib/binding/node-v83-linux-x64/node_sqlite3.node" "--module_name=node_sqlite3" "--module_path=/app/node_modules/sqlite3/lib/binding/node-v83-linux-x64" "--napi_version=7" "--node_abi_napi=napi" "--napi_build_version=0" "--node_napi_label=node-v83"
+#8 23.96 gyp ERR! cwd /app/node_modules/sqlite3
+#8 23.96 gyp ERR! node -v v14.15.0
+#8 23.96 gyp ERR! node-gyp -v v5.1.0
+#8 23.96 gyp ERR! not ok
+#8 23.96 node-pre-gyp ERR! build error
+#8 23.96 node-pre-gyp ERR! stack Error: Failed to execute '/usr/local/bin/node /usr/local/lib/node_modules/npm/node_modules/node-gyp/bin/node-gyp.js configure --fallback-to-build --module=/app/node_modules/sqlite3/lib/binding/node-v83-linux-x64/node_sqlite3.node --module_name=node_sqlite3 --module_path=/app/node_modules/sqlite3/lib/binding/node-v83-linux-x64 --napi_version=7 --node_abi_napi=napi --napi_build_version=0 --node_napi_label=node-v83' (1)
+#8 23.96 node-pre-gyp ERR! stack     at ChildProcess.<anonymous> (/app/node_modules/node-pre-gyp/lib/util/compile.js:83:29)
+#8 23.96 node-pre-gyp ERR! stack     at ChildProcess.emit (events.js:315:20)
+#8 23.96 node-pre-gyp ERR! stack     at maybeClose (internal/child_process.js:1048:16)
+#8 23.96 node-pre-gyp ERR! stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:288:5)
+#8 23.96 node-pre-gyp ERR! System Linux 4.19.76-linuxkit
+#8 23.96 node-pre-gyp ERR! command "/usr/local/bin/node" "/app/node_modules/sqlite3/node_modules/.bin/node-pre-gyp" "install" "--fallback-to-build"
+#8 23.96 node-pre-gyp ERR! cwd /app/node_modules/sqlite3
+#8 23.96 node-pre-gyp ERR! node -v v14.15.0
+#8 23.96 node-pre-gyp ERR! node-pre-gyp -v v0.11.0
+#8 23.96 node-pre-gyp ERR! not ok
+#8 23.96 Failed to execute '/usr/local/bin/node /usr/local/lib/node_modules/npm/node_modules/node-gyp/bin/node-gyp.js configure --fallback-to-build --module=/app/node_modules/sqlite3/lib/binding/node-v83-linux-x64/node_sqlite3.node --module_name=node_sqlite3 --module_path=/app/node_modules/sqlite3/lib/binding/node-v83-linux-x64 --napi_version=7 --node_abi_napi=napi --napi_build_version=0 --node_napi_label=node-v83' (1)
+------
+failed to solve with frontend dockerfile.v0: failed to build LLB: executor failed running [/bin/sh -c yarn install --production]: runc did not terminate sucessfully
+PS C:\Apps\home\tutorials\docker\our-application\app>
+
